@@ -4,36 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>임홍 & 문다민 결혼합니다</title>
+    
+    <meta property="og:title" content="임홍 ♥ 문다민 결혼합니다">
+    <meta property="og:description" content="2026. 05. 16. SAT AM 11:00 국조전">
+    <meta property="og:image" content="메인_사진_주소를_여기에_넣으세요">
+    
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 0; font-family: 'Nanum Myeongjo', serif; background-color: #fdfcf9; text-align: center; color: #444; word-break: keep-all; }
-        .container { max-width: 480px; margin: 0 auto; background: #fff; min-height: 100vh; padding-bottom: 50px; }
-        
-        /* 헤더 & 메인사진 */
-        .main-section { padding: 50px 20px; }
-        .main-img { width: 100%; border-radius: 4px; cursor: pointer; margin: 25px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .wedding-date { letter-spacing: 2px; color: #8a7b6a; font-size: 0.9rem; }
+        /* 기본 스타일 */
+        body { margin: 0; padding: 0; font-family: 'Nanum Myeongjo', serif; background-color: #fdfcf9; text-align: center; color: #444; word-break: keep-all; line-height: 1.6; }
+        .container { max-width: 480px; margin: 0 auto; background: #fff; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+        section { padding: 40px 20px; }
+        hr { border: 0; border-top: 1px solid #eee; margin: 0 40px; }
+
+        /* 메인 섹션 */
+        .main-section { padding-top: 60px; }
+        .wedding-date { letter-spacing: 3px; color: #8a7b6a; font-size: 0.9rem; margin-bottom: 10px; }
+        .main-img { width: 90%; border-radius: 4px; cursor: pointer; margin: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
 
         /* 인사말 */
-        .greeting-section { padding: 40px 30px; line-height: 2; background: #faf8f5; }
-        .greeting-text { font-size: 0.95rem; margin-bottom: 30px; }
+        .greeting-section { background: #faf8f5; line-height: 2.2; }
+        .greeting-text { font-size: 0.95rem; }
 
-        /* 갤러리 (작은 사진 3개) */
-        .gallery-section { padding: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-        .thumb-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 4px; cursor: pointer; }
+        /* 달력 & 디데이 */
+        .calendar-table { width: 100%; max-width: 280px; margin: 20px auto; border-collapse: collapse; }
+        .calendar-table th, .calendar-table td { padding: 8px; text-align: center; font-size: 0.85rem; }
+        .calendar-table th { color: #bbb; font-weight: normal; }
+        .today { background: #8a7b6a; color: #fff; border-radius: 50%; display: inline-block; width: 26px; height: 26px; line-height: 26px; }
+        .sunday { color: #d9534f; }
+        .d-day-area { margin-top: 25px; font-size: 1rem; font-weight: bold; color: #8a7b6a; }
 
-        /* 계좌번호 섹션 */
-        .account-section { padding: 40px 20px; background: #fff; }
-        .account-group { margin-bottom: 30px; text-align: left; border: 1px solid #eee; border-radius: 8px; padding: 15px; }
-        .account-title { font-weight: bold; margin-bottom: 15px; color: #8a7b6a; border-bottom: 1px solid #f2f2f2; padding-bottom: 5px; }
-        .account-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 0.9rem; }
-        .copy-btn { padding: 4px 8px; background: #f2f2f2; border: none; border-radius: 4px; font-size: 0.75rem; cursor: pointer; font-family: inherit; }
+        /* 갤러리 */
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
+        .thumb-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; cursor: pointer; }
+
+        /* 오시는 길 & 내비 */
+        .location-section { background: #faf8f5; }
+        .nav-group { display: flex; justify-content: center; gap: 8px; margin: 20px 0; }
+        .nav-btn { flex: 1; padding: 12px 0; border-radius: 6px; font-size: 0.8rem; text-decoration: none; color: #fff; font-weight: bold; }
+        .naver-map { background: #03cf5d; }
+        .kakao-map { background: #fee500; color: #3c1e1e; }
+        .t-map { background: #ff4000; }
+        .parking-notice { background: #fff; padding: 15px; border-radius: 6px; border: 1px dashed #d1c4bc; font-size: 0.8rem; color: #777; }
+
+        /* 계좌번호 */
+        .account-group { margin-top: 20px; text-align: left; border: 1px solid #f0f0f0; border-radius: 8px; padding: 15px; background: #fff; }
+        .account-title { font-weight: bold; margin-bottom: 12px; color: #8a7b6a; font-size: 0.9rem; border-bottom: 1px solid #f9f9f9; padding-bottom: 5px; }
+        .account-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.85rem; }
+        .copy-btn { padding: 3px 8px; background: #f7f7f7; border: 1px solid #ddd; border-radius: 4px; font-size: 0.7rem; cursor: pointer; font-family: inherit; }
 
         /* 모달(크게 보기) */
-        #modal { display: none; position: fixed; z-index: 999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
-        #modal img { max-width: 95%; max-height: 85%; border-radius: 4px; }
-
-        .location-info { margin-top: 20px; font-size: 1rem; color: #333; }
+        #modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+        #modal img { max-width: 95%; max-height: 85%; object-fit: contain; }
     </style>
 </head>
 <body>
@@ -43,8 +65,10 @@
         <p class="wedding-date">2026. 05. 16. SAT AM 11:00</p>
         <h1 style="font-weight: 400; margin: 15px 0;">임홍 <small>&</small> 문다민</h1>
         <img src="https://via.placeholder.com/600x800" class="main-img" onclick="openModal(this.src)">
-        <p class="location-info">칠곡군 왜관읍 국조전</p>
+        <p style="font-size: 1.1rem;">칠곡군 왜관읍 국조전</p>
     </section>
+
+    <hr>
 
     <section class="greeting-section">
         <div class="greeting-text">
@@ -59,57 +83,102 @@
         </div>
     </section>
 
+    <section class="calendar-section">
+        <div style="color:#8a7b6a; margin-bottom:15px;">2026. 05</div>
+        <table class="calendar-table">
+            <thead>
+                <tr><th class="sunday">S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="sunday"></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
+                <tr><td class="sunday">3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+                <tr><td class="sunday">10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td><span class="today">16</span></td></tr>
+                <tr><td class="sunday">17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
+                <tr><td class="sunday">24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
+                <tr><td class="sunday">31</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+        <div id="d-day" class="d-day-area"></div>
+    </section>
+
+    <hr>
+
     <section class="gallery-section">
-        <img src="https://via.placeholder.com/400" class="thumb-img" onclick="openModal(this.src)">
-        <img src="https://via.placeholder.com/400" class="thumb-img" onclick="openModal(this.src)">
-        <img src="https://via.placeholder.com/400" class="thumb-img" onclick="openModal(this.src)">
+        <div style="margin-bottom: 15px; color: #8a7b6a;">GALLERY</div>
+        <div class="gallery-grid">
+            <img src="https://via.placeholder.com/400" class="thumb-img" onclick="openModal(this.src)">
+            <img src="https://via.placeholder.com/400" class="thumb-img" onclick="openModal(this.src)">
+            <img src="https://via.placeholder.com/400" class="thumb-img" onclick="openModal(this.src)">
+        </div>
+    </section>
+
+    <section class="location-section">
+        <div style="font-weight:bold; color:#8a7b6a; margin-bottom:10px;">LOCATION</div>
+        <div style="font-size:0.95rem; margin-bottom:20px;">
+            <strong>국조전</strong><br>
+            <span style="font-size:0.85rem; color:#666;">경상북도 칠곡군 왜관읍 석전로15길 20</span>
+        </div>
+
+        <div class="nav-group">
+            <a href="https://map.naver.com/v5/search/경상북도 칠곡군 왜관읍 석전로15길 20" target="_blank" class="nav-btn naver-map">네이버 지도</a>
+            <a href="https://map.kakao.com/link/search/경상북도 칠곡군 왜관읍 석전로15길 20" target="_blank" class="nav-btn kakao-map">카카오 맵</a>
+            <a href="tmap://search?name=국조전" class="nav-btn t-map">티맵</a>
+        </div>
+
+        <div class="parking-notice">
+            ℹ️ <strong>주차 안내</strong><br>
+            지정 주차 장소가 없으니,<br>인근 갓길에 주차 부탁드립니다.
+        </div>
     </section>
 
     <section class="account-section">
-        <h3 style="margin-bottom: 25px;">마음 전하실 곳</h3>
+        <div style="margin-bottom: 20px; color: #8a7b6a;">마음 전하실 곳</div>
         
         <div class="account-group">
             <div class="account-title">신랑측</div>
-            <div class="account-row">
-                <span>신랑 임홍</span>
-                <button class="copy-btn" onclick="copyAcc('00은행 123-456-7890')">복사</button>
-            </div>
-            <div class="account-row">
-                <span>아버지 임욱</span>
-                <button class="copy-btn" onclick="copyAcc('00은행 123-456-7890')">복사</button>
-            </div>
+            <div class="account-row"><span>신랑 임홍</span><button class="copy-btn" onclick="copyAcc('00은행 123-456-7890')">복사</button></div>
+            <div class="account-row"><span>아버지 임욱</span><button class="copy-btn" onclick="copyAcc('00은행 123-456-7890')">복사</button></div>
         </div>
 
         <div class="account-group">
             <div class="account-title">신부측</div>
-            <div class="account-row">
-                <span>신부 문다민</span>
-                <button class="copy-btn" onclick="copyAcc('00은행 123-456-7890')">복사</button>
-            </div>
-            <div class="account-row">
-                <span>아버지 문정환</span>
-                <button class="copy-btn" onclick="copyAcc('00은행 123-456-7890')">복사</button>
-            </div>
-            <div class="account-row">
-                <span>어머니 배미령</span>
-                <button class="copy-btn" onclick="copyAcc('00은행 123-456-7890')">복사</button>
-            </div>
+            <div class="account-row"><span>신부 문다민</span><button class="copy-btn" onclick="copyAcc('00은행 123-456-7890')">복사</button></div>
+            <div class="account-row"><span>아버지 문정환</span><button class="copy-btn" onclick="copyAcc('00은행 123-456-7890')">복사</button></div>
+            <div class="account-row"><span>어머니 배미령</span><button class="copy-btn" onclick="copyAcc('00은행 123-456-7890')">복사</button></div>
         </div>
     </section>
+
+    <p style="font-size:0.7rem; color:#ccc; padding-bottom:30px;">Copyright 2026. 임홍 & 문다민 all rights reserved.</p>
 </div>
 
 <div id="modal" onclick="this.style.display='none'"><img id="modal-img" src=""></div>
 
 <script>
+    // 사진 크게 보기
     function openModal(src) {
         document.getElementById('modal').style.display = 'flex';
         document.getElementById('modal-img').src = src;
     }
+
+    // 계좌번호 복사
     function copyAcc(text) {
         navigator.clipboard.writeText(text).then(() => {
             alert("계좌번호가 복사되었습니다.");
         });
     }
+
+    // 디데이 계산
+    function updateDDay() {
+        const weddingDay = new Date("2026-05-16").getTime();
+        const now = new Date().getTime();
+        const distance = weddingDay - now;
+        const dDay = Math.ceil(distance / (1000 * 60 * 60 * 24));
+        const element = document.getElementById("d-day");
+        if (dDay > 0) element.innerHTML = `임홍 ♥ 문다민의 결혼식이 <b>${dDay}일</b> 남았습니다`;
+        else if (dDay === 0) element.innerHTML = `오늘은 두 사람의 <b>결혼식 날</b>입니다!`;
+        else element.innerHTML = `행복하게 잘 살고 있습니다 :)`;
+    }
+    updateDDay();
 </script>
 
 </body>
