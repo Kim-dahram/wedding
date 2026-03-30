@@ -3,86 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>우리 결혼합니다</title>
+    <title>임홍 & 문다민 결혼합니다</title>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Nanum Myeongjo', serif;
-            background-color: #f9f6f2;
-            color: #333;
-            text-align: center;
-        }
-        .container {
-            max-width: 480px;
-            margin: 0 auto;
-            background: #fff;
-            box-shadow: 0 0 20px rgba(0,0,0,0.05);
-        }
-        /* 메인 섹션 */
-        .main-visual {
-            padding: 60px 20px;
-            background: #fffaf0;
-        }
-        .main-visual h1 { font-size: 1.5rem; letter-spacing: 2px; }
-        .main-image {
-            width: 100%;
-            height: 400px;
-            background: #ddd url('https://via.placeholder.com/400x600') no-repeat center/cover;
-            margin: 20px 0;
-        }
-        /* 정보 섹션 */
-        .info-section { padding: 50px 20px; }
-        .date { font-size: 1.2rem; color: #8a7b6a; margin-bottom: 10px; }
-        .location { font-size: 1rem; color: #666; }
+        body { margin: 0; padding: 0; font-family: 'Nanum Myeongjo', serif; background-color: #fdfcf9; text-align: center; color: #444; word-break: keep-all; }
+        .container { max-width: 480px; margin: 0 auto; background: #fff; min-height: 100vh; padding-bottom: 50px; }
         
-        /* 버튼 스타일 */
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            background: #8a7b6a;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            border: none;
-        }
+        /* 헤더 & 메인사진 */
+        .main-section { padding: 50px 20px; }
+        .main-img { width: 100%; border-radius: 4px; cursor: pointer; margin: 25px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .wedding-date { letter-spacing: 2px; color: #8a7b6a; font-size: 0.9rem; }
+
+        /* 인사말 */
+        .greeting-section { padding: 40px 30px; line-height: 2; background: #faf8f5; }
+        .greeting-text { font-size: 0.95rem; margin-bottom: 30px; }
+
+        /* 갤러리 (작은 사진 3개) */
+        .gallery-section { padding: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .thumb-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 4px; cursor: pointer; }
+
+        /* 계좌번호 섹션 */
+        .account-section { padding: 40px 20px; background: #fff; }
+        .account-group { margin-bottom: 30px; text-align: left; border: 1px solid #eee; border-radius: 8px; padding: 15px; }
+        .account-title { font-weight: bold; margin-bottom: 15px; color: #8a7b6a; border-bottom: 1px solid #f2f2f2; padding-bottom: 5px; }
+        .account-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 0.9rem; }
+        .copy-btn { padding: 4px 8px; background: #f2f2f2; border: none; border-radius: 4px; font-size: 0.75rem; cursor: pointer; font-family: inherit; }
+
+        /* 모달(크게 보기) */
+        #modal { display: none; position: fixed; z-index: 999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+        #modal img { max-width: 95%; max-height: 85%; border-radius: 4px; }
+
+        .location-info { margin-top: 20px; font-size: 1rem; color: #333; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <section class="main-visual">
-        <p>JOIN US FOR THE WEDDING OF</p>
-        <h1>김철수 & 이영희</h1>
-        <div class="main-image">
-            </div>
-        <p>2026년 05월 16일 토요일 오전 11시</p>
+    <section class="main-section">
+        <p class="wedding-date">2026. 05. 16. SAT AM 11:00</p>
+        <h1 style="font-weight: 400; margin: 15px 0;">임홍 <small>&</small> 문다민</h1>
+        <img src="https://via.placeholder.com/600x800" class="main-img" onclick="openModal(this.src)">
+        <p class="location-info">칠곡군 왜관읍 국조전</p>
     </section>
 
-    <section class="info-section">
-        <h2>서로의 하루가 되어주기로 한 두 사람이</h2>
-        <p>이제 한 걸음을 함께 내딛습니다.<br>이번 시작은 소중한 가족과 가까운 분들만 모시고<br>조용히 나누려 합니다.</p>
-직접 모시지 못하는 점 넓은 마음으로 양해 부탁드립니다.
-언제나처럼 따뜻한 마음으로 축복해 주신다면
-그 마음 오래도록 간직하겠습니다.
-
-
-        <hr style="width: 30px; border: 0.5px solid #8a7b6a; margin: 30px auto;">
-        <div class="location">
-           왜관 칠곡군 국조전
+    <section class="greeting-section">
+        <div class="greeting-text">
+            저희 두 사람, 함께하기로 했습니다.<br>
+            이제 한 걸음을 함께 내딛습니다.<br><br>
+            이번 시작은 소중한 가족과<br>
+            가까운 분들만 모시고 조용히 나누려 합니다.<br>
+            직접 모시지 못하는 점<br>
+            넓은 마음으로 양해 부탁드립니다.<br><br>
+            언제나처럼 따뜻한 마음으로 축복해 주신다면<br>
+            그 마음 오래도록 간직하겠습니다.
         </div>
+    </section>
+
+    <section class="gallery-section">
+        <img src="https://via.placeholder.com/400" class="thumb-img" onclick="openModal(this.src)">
+        <img src="https://via.placeholder.com/400" class="thumb-img" onclick="openModal(this.src)">
+        <img src="https://via.placeholder.com/400" class="thumb-img" onclick="openModal(this.src)">
+    </section>
+
+    <section class="account-section">
+        <h3 style="margin-bottom: 25px;">마음 전하실 곳</h3>
         
-        <button class="btn" onclick="copyAccount('123-456-789012')">신랑 마음 전하기(복사)</button>
+        <div class="account-group">
+            <div class="account-title">신랑측</div>
+            <div class="account-row">
+                <span>신랑 임홍</span>
+                <button class="copy-btn" onclick="copyAcc('00은행 123-456-7890')">복사</button>
+            </div>
+            <div class="account-row">
+                <span>아버지 임욱</span>
+                <button class="copy-btn" onclick="copyAcc('00은행 123-456-7890')">복사</button>
+            </div>
+        </div>
+
+        <div class="account-group">
+            <div class="account-title">신부측</div>
+            <div class="account-row">
+                <span>신부 문다민</span>
+                <button class="copy-btn" onclick="copyAcc('00은행 123-456-7890')">복사</button>
+            </div>
+            <div class="account-row">
+                <span>아버지 문정환</span>
+                <button class="copy-btn" onclick="copyAcc('00은행 123-456-7890')">복사</button>
+            </div>
+            <div class="account-row">
+                <span>어머니 배미령</span>
+                <button class="copy-btn" onclick="copyAcc('00은행 123-456-7890')">복사</button>
+            </div>
+        </div>
     </section>
 </div>
 
+<div id="modal" onclick="this.style.display='none'"><img id="modal-img" src=""></div>
+
 <script>
-    function copyAccount(account) {
-        navigator.clipboard.writeText(account).then(() => {
+    function openModal(src) {
+        document.getElementById('modal').style.display = 'flex';
+        document.getElementById('modal-img').src = src;
+    }
+    function copyAcc(text) {
+        navigator.clipboard.writeText(text).then(() => {
             alert("계좌번호가 복사되었습니다.");
         });
     }
